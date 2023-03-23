@@ -1,0 +1,59 @@
+table PRODUTO
+( 
+  _ NumId _ int, 
+  Nome varchar, 
+  PrecoCompra int,
+  PrecoVenda int,  
+  Validade int,
+  Categoria --> CATEGORIA_PRODUTO.IdProduto,
+  Fornecedor --> FORNECEDOR.IdFiscal
+)
+
+table FUNCIONARIO
+( 
+   _ NumId _ int, 
+   Name varchar,
+   DataNasc int,
+   Salario int,
+   Email ? varchar,
+   SuperVisor --> FUNCIONARIO.NumId,
+   Loja --> LOJA.Nome
+
+)
+
+table Telemovel
+(
+
+_ Identificação _ --> FUNCIONARIO.NumId,
+_ Numero _
+)
+
+table LOJA 
+( 
+  _ Nome _ varchar, 
+  Rua varchar, 
+  Num varchar, 
+  Andar varchar, 
+  Localidade varchar,
+  CodPostal varchar,
+  Responsável --> FUNCIONARIO.NumId
+)
+
+table CATEGORIA_PRODUTO 
+( 
+  _ IdProduto _ int, 
+  NomeCategoria varchar 
+)
+
+table FORNECEDOR 
+( 
+   _ IdFiscal _ int,
+   NomeFornecedor varchar
+)
+
+table FORNECE
+(
+   _ Produto _ --> PRODUTO.NumId,
+   _ Fornecedor _ --> FORNECEDOR.IdFiscal
+  
+)

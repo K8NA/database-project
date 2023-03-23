@@ -1,0 +1,31 @@
+PRODUTO(
+_ NumId _, 
+Nome, 
+PrecoCompra, 
+PrecoVenda, 
+Validade, 
+)
+
+FUNCIONARIO(
+_ NumId _, 
+Nome,
+.Idade.,
+Salario,
+Email?,
+{ NumTelefone } 
+)
+
+CATEGORIA_PRODUTO (
+_ IdProduto _, 
+NomeCategoria 
+)
+
+FORNECEDOR(
+_ IdFiscal _, 
+NomeFornecedor 
+)
+
+LOJA(
+_ Nome _,
+{ Localização(Rua,Num, Andar?, Localidade, CodPostal)}
+)
